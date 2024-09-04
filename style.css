@@ -106,7 +106,7 @@ a.active {
     padding: 1rem 0;
 }
 section:not(:first-child){
-    padding: 1rem 0;
+    padding: 1rem;
 }
 /* ******************************** Header and Navbar section **************************/
 

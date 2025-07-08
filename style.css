@@ -442,14 +442,13 @@ section:not(:first-child) {
 
 /**************************************** Profiles Section ***********************/
 #profile-links-container li {
-    padding: 1rem;
+    padding: 0.125rem;
 }
 
 #connect a {
     text-decoration: underline;
     color: blue;
     cursor: pointer;
-    padding: 1rem;
 }
 
 /**************************************** MEDIA QUERIES ******************************* */

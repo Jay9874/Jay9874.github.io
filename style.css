@@ -100,14 +100,17 @@ a.active {
         backdrop-filter: blur(0px);
     }
 }
+
 /************************************** Global css */
-.section-header{
+.section-header {
     text-align: center;
     padding: 1rem 0;
 }
-section:not(:first-child){
+
+section:not(:first-child) {
     padding: 1rem;
 }
+
 /* ******************************** Header and Navbar section **************************/
 
 .main-header {
@@ -191,6 +194,8 @@ section:not(:first-child){
 }
 
 /********************** The arrow animation ******************** */
+
+
 #arrow-bottom-bar.active {
     animation-duration: var(--animation-time);
     animation-name: bottomturn;
@@ -205,6 +210,7 @@ section:not(:first-child){
         top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
         transform: rotate(-45deg);
     }
+
     100% {
         top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
         transform: rotate(-135deg);
@@ -218,7 +224,7 @@ section:not(:first-child){
 
     }
 
-   
+
     100% {
         top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
         transform: rotate(-45deg);
@@ -229,7 +235,7 @@ section:not(:first-child){
     animation-duration: var(--animation-time);
     animation-name: topturn;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1),transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1), transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 @keyframes topturn {
@@ -237,6 +243,7 @@ section:not(:first-child){
         bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
         transform: rotate(45deg);
     }
+
     100% {
         bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
         transform: rotate(135deg);
@@ -249,6 +256,7 @@ section:not(:first-child){
         transform: rotate(135deg);
 
     }
+
     100% {
         bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
         transform: rotate(45deg);
@@ -277,7 +285,8 @@ section:not(:first-child){
     z-index: 3;
     margin: calc(91.5px + 1.5rem) 0.5rem 0 0;
 }
-.mobile-links{
+
+.mobile-links {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -389,7 +398,7 @@ section:not(:first-child){
 }
 
 
-/* education section */
+/******************************* education section ****************************/
 
 .education-section {
     background-color: var(--second-primary-color);
@@ -430,7 +439,21 @@ section:not(:first-child){
     background-color: var(--fifth-primary-color);
 }
 
+
+/**************************************** Profiles Section ***********************/
+#profile-links-container li {
+    padding: 1rem;
+}
+
+#connect a {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    padding: 1rem;
+}
+
 /**************************************** MEDIA QUERIES ******************************* */
+
 @media screen and (max-width: 850px) {
     .navbar-links-container {
         display: none;

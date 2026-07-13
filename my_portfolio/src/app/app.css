@@ -1,0 +1,177 @@
+:host {
+    display: block;
+    --overlay-bg-start: #7d7d7d00;
+    --overlay-bg-end: #7d7d7d7c;
+    --bar-height: 3px;
+    --bar-width: 17px;
+    --bar-border-radius: 1.5px;
+    --animation-time: 300ms;
+  }
+  
+  /* utility: hide scrollbars on the horizontally-scrolling card rows */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* ---------- body overlay blur, shown behind the open mobile menu ---------- */
+  .overlay-in {
+    animation: blur-in var(--animation-time) ease-in-out forwards;
+  }
+  .overlay-out {
+    animation: blur-out var(--animation-time) ease-in-out forwards;
+  }
+  @keyframes blur-in {
+    0% {
+      background-color: var(--overlay-bg-start);
+      backdrop-filter: blur(0px);
+    }
+    100% {
+      background-color: var(--overlay-bg-end);
+      backdrop-filter: blur(4px);
+    }
+  }
+  @keyframes blur-out {
+    0% {
+      background-color: var(--overlay-bg-end);
+      backdrop-filter: blur(4px);
+    }
+    100% {
+      background-color: var(--overlay-bg-start);
+      backdrop-filter: blur(0px);
+    }
+  }
+  
+  /* ---------- mobile menu slide-in / slide-out ---------- */
+  .menu-slide-in {
+    animation: slide-in var(--animation-time) cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+  .menu-slide-out {
+    animation: slide-out var(--animation-time) cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+  @keyframes slide-in {
+    from {
+      right: calc(-72px - 138.234px);
+    }
+    to {
+      right: 0;
+    }
+  }
+  @keyframes slide-out {
+    from {
+      right: 0;
+    }
+    to {
+      right: calc(-72px - 138.234px);
+    }
+  }
+  
+  /* ---------- hamburger/arrow icon geometry (kept as raw calc(), not expressible cleanly as utilities) ---------- */
+  .arrow-bar-track {
+    position: relative;
+    height: 20px;
+    width: calc((var(--bar-width) / 1.4142 + var(--bar-height) / 1.4142) - var(--bar-border-radius) * 0.824);
+  }
+  .arrow-bar {
+    position: absolute;
+    left: calc(var(--bar-height) * 0.3536 + var(--bar-width) * (-0.1464) - var(--bar-border-radius) * 0.414);
+    height: var(--bar-height);
+    width: var(--bar-width);
+    border-radius: var(--bar-border-radius);
+    background-color: rgba(255, 0, 0, 0.395);
+  }
+  .arrow-bar-top {
+    transform: rotate(45deg);
+    bottom: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+  }
+  .arrow-bar-bottom {
+    transform: rotate(-45deg);
+    top: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+  }
+  .arrow-bar-bottom.arrow-active {
+    animation: bottom-turn var(--animation-time) cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+  .arrow-bar-top.arrow-active {
+    animation: top-turn var(--animation-time) cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+  .arrow-bar-top.arrow-normal {
+    animation: top-turn-rev var(--animation-time) ease forwards;
+  }
+  .arrow-bar-bottom.arrow-normal {
+    animation: bottom-turn-rev var(--animation-time) ease forwards;
+  }
+  @keyframes bottom-turn {
+    0% {
+      top: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(-45deg);
+    }
+    100% {
+      top: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(-135deg);
+    }
+  }
+  @keyframes bottom-turn-rev {
+    0% {
+      top: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(-135deg);
+    }
+    100% {
+      top: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(-45deg);
+    }
+  }
+  @keyframes top-turn {
+    0% {
+      bottom: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(45deg);
+    }
+    100% {
+      bottom: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(135deg);
+    }
+  }
+  @keyframes top-turn-rev {
+    0% {
+      bottom: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(135deg);
+    }
+    100% {
+      bottom: calc(var(--bar-width) * 0.3536 - var(--bar-height) * 0.3536 - 1.45px);
+      transform: rotate(45deg);
+    }
+  }
+  
+  /* ---------- scroll-scrubbed profile photo (negative animation-delay driven by --scroll) ---------- */
+  .my-photo-animate {
+    animation: move-photo 1s linear both paused;
+    animation-delay: calc(var(--scroll) * -2s);
+  }
+  @keyframes move-photo {
+    0% {
+      left: calc(50% - 100px);
+      top: 35%;
+      transform: scale(1);
+    }
+    100% {
+      left: 0;
+      top: -40px;
+      transform: scale(0.4);
+    }
+  }
+  @media screen and (max-width: 850px) {
+    @keyframes move-photo {
+      0% {
+        left: calc(50% - 100px);
+        top: 35%;
+        transform: scale(1);
+      }
+      100% {
+        left: -40px;
+        top: -40px;
+        transform: scale(0.4);
+      }
+    }
+  }

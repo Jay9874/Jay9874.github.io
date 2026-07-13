@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../node_modules/@ionic/core/components/p-D7bSXQD3.js"],
+  "sourcesContent": ["/*!\n * (C) Ionic http://ionicframework.com - MIT License\n */\nimport{k as o,w as s}from\"./p-CHqRYvYm.js\";import{a as r,s as t}from\"./p-ijF0iCrA.js\";import{c as a}from\"./p-Baq1XyAy.js\";const i=()=>{const i=window;i.addEventListener(\"statusTap\",(()=>{o((()=>{const o=document.elementFromPoint(i.innerWidth/2,i.innerHeight/2);if(!o)return;const n=r(o);n&&new Promise((o=>a(n,o))).then((()=>{s((async()=>{n.style.setProperty(\"--overflow\",\"hidden\"),await t(n,300),n.style.removeProperty(\"--overflow\")}))}))}))}))};export{i as startStatusTap}"],
+  "mappings": ";;;;;;;;;;;;;;AAG0H,IAAM,IAAE,MAAI;AAAC,QAAMA,KAAE;AAAO,EAAAA,GAAE,iBAAiB,cAAa,MAAI;AAAC,OAAG,MAAI;AAAC,YAAM,IAAE,SAAS,iBAAiBA,GAAE,aAAW,GAAEA,GAAE,cAAY,CAAC;AAAE,UAAG,CAAC,EAAE;AAAO,YAAM,IAAE,EAAE,CAAC;AAAE,WAAG,IAAI,SAAS,CAAAC,OAAG,EAAE,GAAEA,EAAC,EAAE,EAAE,MAAM,MAAI;AAAC,WAAG,YAAS;AAAC,YAAE,MAAM,YAAY,cAAa,QAAQ,GAAE,MAAM,EAAE,GAAE,GAAG,GAAE,EAAE,MAAM,eAAe,YAAY;AAAA,QAAC,EAAE;AAAA,MAAC,EAAE;AAAA,IAAC,EAAE;AAAA,EAAC,EAAE;AAAC;",
+  "names": ["i", "o"]
+}

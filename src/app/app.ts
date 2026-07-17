@@ -23,7 +23,7 @@ export class App implements AfterViewInit, OnDestroy {
 
   // traced from the uploaded shadow photo, normalized so its bounding box
   // is centered at (0,0): ~271 units wide, 400 units tall
-  readonly shadowPathD =
+  public readonly shadowPathD =
     'M 16.36 -196.94 L 6.69 -199.52 L -4.27 -200.00 L -16.69 -198.55 L -29.75 -194.36 ' +
     'L -47.16 -184.04 L -62.15 -168.72 L -68.92 -159.05 L -78.44 -134.54 L -79.24 -122.77 ' +
     'L -78.11 -121.64 L -77.95 -103.26 L -73.92 -86.17 L -72.31 -83.92 L -67.80 -82.95 ' +
@@ -66,7 +66,7 @@ export class App implements AfterViewInit, OnDestroy {
   private ticking = false;
   private scrollProgress = 0;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone) { }
 
   ngAfterViewInit(): void {
     this.initThree();

@@ -10,10 +10,11 @@
     <svg #overlaySvg class="absolute inset-0 w-full h-full block">
       <defs>
         <mask id="revealMask">
-          <rect x="0" y="0" width="100%" height="100%" fill="white" />
+          <rect id="end" x="0" y="0" width="100%" height="100%" fill="white" />
           <!-- the traced silhouette lives in its own local space, centered at (0,0) -->
           <g #shadowGroup>
-            <path [attr.d]="shadowPathD" fill="black" />
+            <path id="start" #shadow [attr.d]="shadowPathD" fill="black" />
+            
           </g>
         </mask>
 
